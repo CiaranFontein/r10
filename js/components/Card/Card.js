@@ -11,18 +11,14 @@ const Card = ({item}) => (
           'https://media.pitchfork.com/photos/5b7d837fa78458227bd77ff0/2:1/w_790/Aerosmith.jpg',
       }}
     />
-    
+
     <View style={styles.view}>
-      <Text>Artist: {item.artistName}</Text>
-      <Text>Track: {item.trackName}</Text>
-      <Text>Track Price: {item.trackPrice}</Text>
+      <Text>Start Time: {item.startTime}</Text>
+      <Text>Title: {item.name}</Text>
+      <Text>Location: {item.location}</Text>
       <Button
         title="Go To Session"
-        onPress={() =>
-          navigation.push('Session', {
-            itemId: 'hello',
-          })
-        }
+        onPress={() => navigation.push('Session')}
       />
     </View>
   </View>

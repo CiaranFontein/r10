@@ -7,6 +7,7 @@ import Session from '../../components/Session';
 const Schedule = ({navigation, data}) => {
   return data ? (
     <View>
+      <Text>session after this</Text>
       <Session data={data} />
     </View>
   ) : (

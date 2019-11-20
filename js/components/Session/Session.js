@@ -9,7 +9,9 @@ class Session extends Component {
     };
   }
   render() {
+      console.log('thishthisthis');
     const {data} = this.props;
+    console.log(data);
     return (
       <FlatList
         keyExtractor={item => item.id + ''}
