@@ -3,6 +3,7 @@ import {Platform} from 'react-native';
 export const colors = {
   black: '#000000',
   nearBlack: '#111111',
+  lightBlack: '#888',
   mediumGrey: '#999999',
   lightGrey: '#e6e6e6',
   blue: '#8797D6',

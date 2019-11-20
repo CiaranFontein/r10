@@ -1,9 +1,11 @@
-import React from 'react';
-import Text from 'react-native';
+import React, {Component} from 'react';
 import Schedule from './Schedule';
-import styles from './styles';
+import {QUERY_ALL_SESSIONS} from '../../config/api';
+import {Query} from 'react-apollo';
+import Loader from '../../components/Loader';
+import {View, Text} from 'react-native';
 
-class ScheduleContainer extends React.Component {
+class ScheduleContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +15,21 @@ class ScheduleContainer extends React.Component {
   }
 
   render() {
-    return <Schedule />;
+    return (
+      <View>
+        <Query query={QUERY_ALL_SESSIONS}>
+          {({loading, error, data}) => {
+            if (loading) return <Loader />;
+            if (error) return <Text>Error: {error}</Text>;
+            if (data) {
+              return (
+                <Schedule navigation={this.props.navigation} data={data} />
+              );
+            }
+          }}
+        </Query>
+      </View>
+    );
   }
 }
 

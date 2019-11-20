@@ -7,7 +7,7 @@ import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {colors, typography} from '../config/styles';
-const {black, mediumGrey, white} = colors;
+const {mediumGrey, white, lightBlack} = colors;
 import {sharedNavigationOptions} from './config';
 
 const AboutStack = createStackNavigator(
@@ -90,7 +90,7 @@ export default createBottomTabNavigator(
         fontFamily: typography.fontMain,
       },
       tabStyle: {
-        backgroundColor: black,
+        backgroundColor: lightBlack,
       },
     },
   },
