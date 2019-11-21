@@ -8,37 +8,25 @@ const styles = StyleSheet.create({
     color: 'red',
     paddingTop: 100,
   },
-  about: {
-    margin: 10,
+  page: {
+    backgroundColor: 'black',
   },
-  aboutImageView: {
+  centered: {
+    justifyContent: 'center',
     alignItems: 'center',
-    borderBottomColor: 'lightgrey',
-    borderBottomWidth: 1,
   },
-  aboutImage: {
-    height: 60,
-    width: 250,
-    marginBottom: 20,
-    marginTop: 20,
+  panel: {
+    backgroundColor: 'white',
   },
-  paragraph: {
-    fontSize: 18,
-    paddingTop: 5,
-    paddingBottom: 5,
-    fontWeight: '300',
+  title: {
+    fontSize: 20,
+    color: 'white',
   },
   heading: {
     fontSize: 35,
     paddingTop: 5,
     paddingBottom: 5,
     color: 'grey',
-  },
-  accordion: {
-    color: 'purple',
-    fontSize: 20,
-    paddingTop: 5,
-    paddingBottom: 5,
   },
 });
 

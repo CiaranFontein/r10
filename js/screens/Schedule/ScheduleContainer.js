@@ -4,6 +4,7 @@ import {QUERY_ALL_SESSIONS} from '../../config/api';
 import {Query} from 'react-apollo';
 import Loader from '../../components/Loader';
 import {View, Text} from 'react-native';
+import {formatSessionData} from '../../lib/dataFormatHelper';
 
 class ScheduleContainer extends Component {
   constructor(props) {
@@ -16,19 +17,21 @@ class ScheduleContainer extends Component {
 
   render() {
     return (
-      <View>
-        <Query query={QUERY_ALL_SESSIONS}>
-          {({loading, error, data}) => {
-            if (loading) return <Loader />;
-            if (error) return <Text>Error: {error}</Text>;
-            if (data) {
-              return (
-                <Schedule navigation={this.props.navigation} data={data} />
-              );
-            }
-          }}
-        </Query>
-      </View>
+      <Query query={QUERY_ALL_SESSIONS}>
+        {({loading, error, data}) => {
+          if (loading) return <Loader />;
+          if (error) return <Text>Error: {error}</Text>;
+          if (data) {
+            const formattedData = formatSessionData(data.allSessions);
+            return (
+              <Schedule
+                navigation={this.props.navigation}
+                data={formattedData}
+              />
+            );
+          }
+        }}
+      </Query>
     );
   }
 }

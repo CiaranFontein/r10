@@ -1,15 +1,19 @@
 import React from 'react';
 import styles from './styles';
-import {View, Image, Text, ScrollView, Button} from 'react-native';
+import {Text, SectionList} from 'react-native';
 import Loader from '../../components/Loader';
 import Session from '../../components/Session';
 
 const Schedule = ({navigation, data}) => {
   return data ? (
-    <View>
-      <Text>session after this</Text>
-      <Session data={data} />
-    </View>
+    <SectionList
+      sections={data}
+      keyExtractor={(item, index) => item + index}
+      renderItem={({item}) => <Session session={item} />}
+      renderSectionHeader={({section: {title}}) => (
+        <Text style={styles.header}>{title}</Text>
+      )}
+    />
   ) : (
     <Loader />
   );

@@ -1,24 +1,14 @@
-import React, {Component} from 'react';
-import {Card, FlatList} from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
+import styles from './styles';
 
-class Session extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      favourited: false,
-    };
-  }
-  render() {
-      console.log('thishthisthis');
-    const {data} = this.props;
-    console.log(data);
-    return (
-      <FlatList
-        keyExtractor={item => item.id + ''}
-        data={data}
-        renderItem={({item}) => <Card item={item} />}
-      />
-    );
-  }
-}
+const Session = ({session}) => {
+  return (
+    <View style={styles.sessionContainer}>
+      <Text style={styles.title}>{session.title}</Text>
+      <Text style={styles.location}>{session.location}</Text>
+    </View>
+  );
+};
+
 export default Session;

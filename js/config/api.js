@@ -17,6 +17,7 @@ export const QUERY_ALL_CONDUCTS = gql`
 export const QUERY_ALL_SESSIONS = gql`
   query {
     allSessions {
+      id
       startTime
       title
       location

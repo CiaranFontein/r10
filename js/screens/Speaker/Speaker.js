@@ -1,48 +1,25 @@
 import React from 'react';
 import styles from './styles';
-import {
-  View,
-  StyleSheet,
-  FlatList,
-  Image,
-  Text,
-  ScrollView,
-} from 'react-native';
+import {View, Image, Text} from 'react-native';
 
 const Speaker = () => {
   return (
-    <ScrollView style={styles.Speaker}>
-      <View style={styles.SpeakerImageView}>
-        <Image
-          style={styles.SpeakerImage}
-          source={require('../../assets/r10_logo.png')}></Image>
+    <View>
+      <View>
+        <Text style={styles.title}>About the Speaker</Text>
+      </View>
+      <View style={styles.panel}>
+        <Text style={styles.header}>Ada Lovelace</Text>
       </View>
       <View>
-        <Text style={styles.paragraph}>
-          R10 is a conference that focuses on just Speaker any topic related to
-          dev.
+        <Text>
+          Augusta Ada King-Noel, Countess of Lovelace is an English
+          Mathematician and writer, chiefly known for her work on Charles
+          Babbage's early mechanical general-purpose computer, the Analytical
+          Engine
         </Text>
       </View>
-
-      <View>
-        <Text style={styles.heading}>Date & Venue</Text>
-        <Text style={styles.paragraph}>
-          The R10 Conference will take place on Tuesday, June 27, 2020 in
-          Vancouver,BC.
-        </Text>
-      </View>
-
-      <View>
-        <Text style={styles.heading}>Code of Conduct</Text>
-      </View>
-
-      <View>
-        <Text style={styles.accordion}>Purpose</Text>
-        <Text style={styles.accordion}>Open Source Citizenship</Text>
-        <Text style={styles.accordion}>Expected Behavior</Text>
-        <Text style={styles.accordion}>Unacceptable Behaviour</Text>
-      </View>
-    </ScrollView>
+    </View>
   );
 };
 
