@@ -11,6 +11,7 @@ export const colors = {
   red: '#cf392a',
   offWhite: '#f1f1f1',
   white: '#ffffff',
+  tintColor: '#555',
   transluscentGrey: 'rgba(0,0,0,0.4)',
   transluscentWhite: 'rgba(255,255,255,0.8)',
 };

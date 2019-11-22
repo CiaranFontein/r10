@@ -12,7 +12,7 @@ export const addFav = async favId => {
   }
 };
 
-export const getAllFaves = async () => {
+export const getAllFavs = async () => {
   try {
     const keys = await AsyncStorage.getAllKeys();
     const values = await AsyncStorage.multiGet(keys);

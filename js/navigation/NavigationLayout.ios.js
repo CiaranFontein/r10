@@ -9,7 +9,7 @@ import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {colors, typography} from '../config/styles';
-const {mediumGrey, white, lightBlack} = colors;
+const {mediumGrey, white, lightBlack, tintColor} = colors;
 import {sharedNavigationOptions} from './config';
 
 const AboutStack = createStackNavigator(

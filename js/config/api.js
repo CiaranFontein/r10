@@ -18,9 +18,17 @@ export const QUERY_ALL_SESSIONS = gql`
   query {
     allSessions {
       id
+      description
+      location
       startTime
       title
-      location
+      speaker {
+        id
+        bio
+        image
+        name
+        url
+      }
     }
   }
 `;
@@ -29,8 +37,10 @@ export const QUERY_ALL_SPEAKERS = gql`
   query {
     allSpeakers {
       id
+      bio
+      image
       name
-      session
+      url
     }
   }
 `;

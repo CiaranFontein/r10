@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Session from './Session';
-
+import {FavsContext} from '../../context/FavsContext';
 class SessionContainer extends Component {
   static navigationOptions = {
     title: 'Session',
@@ -15,7 +15,7 @@ class SessionContainer extends Component {
           <Session
             navigation={navigation}
             data={params[0]}
-            faveIds={faveIds}
+            favIds={favIds}
             addFavSession={addFavSession}
             removeFavSession={removeFavSession}
           />

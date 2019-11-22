@@ -6,7 +6,7 @@ const Session = ({session, navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Session', []);
+        navigation.push('Session', [session]);
       }}>
       <View style={styles.sessionContainer}>
         <Text style={styles.title}>{session.title}</Text>

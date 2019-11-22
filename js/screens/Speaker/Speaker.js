@@ -1,12 +1,26 @@
 import React from 'react';
 import styles from './styles';
-import {View, Image, Text} from 'react-native';
+import {View, Image, TouchableOpacity, Text, Platform} from 'react-native';
+import {colors} from '../../config/styles';
+const {white} = colors;
 
-const Speaker = () => {
+const Speaker = ({data, navigation}) => {
   return (
     <View>
       <View>
-        <Text style={styles.title}>About the Speaker</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}>
+          <Ionicons
+            name={Platform.OS === 'ios' ? 'ios-close' : 'md-close'}
+            size={32}
+            color={white}
+          />
+        </TouchableOpacity>
+      </View>
+      <View>
+        <Text style={styles.title}>d</Text>
       </View>
       <View style={styles.panel}>
         <Text style={styles.header}>Ada Lovelace</Text>
