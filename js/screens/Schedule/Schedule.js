@@ -9,7 +9,9 @@ const Schedule = ({navigation, data}) => {
     <SectionList
       sections={data}
       keyExtractor={(item, index) => item + index}
-      renderItem={({item}) => <Session session={item} />}
+      renderItem={({item}) => (
+        <Session navigation={navigation} session={item} />
+      )}
       renderSectionHeader={({section: {title}}) => (
         <Text style={styles.header}>{title}</Text>
       )}

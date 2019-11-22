@@ -6,6 +6,7 @@ import AboutScreen from '../screens/About';
 import FavesScreen from '../screens/Faves';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
+import SessionScreen from '../screens/Session';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {colors, typography} from '../config/styles';
 const {mediumGrey, white, lightBlack} = colors;
@@ -50,6 +51,7 @@ const MapStack = createStackNavigator(
 const ScheduleStack = createStackNavigator(
   {
     Schedule: ScheduleScreen,
+    Session: SessionScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

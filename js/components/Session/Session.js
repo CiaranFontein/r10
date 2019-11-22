@@ -1,13 +1,18 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
-const Session = ({session}) => {
+const Session = ({session, navigation}) => {
   return (
-    <View style={styles.sessionContainer}>
-      <Text style={styles.title}>{session.title}</Text>
-      <Text style={styles.location}>{session.location}</Text>
-    </View>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Session', []);
+      }}>
+      <View style={styles.sessionContainer}>
+        <Text style={styles.title}>{session.title}</Text>
+        <Text style={styles.location}>{session.location}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

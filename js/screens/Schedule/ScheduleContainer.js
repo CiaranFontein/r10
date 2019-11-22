@@ -16,6 +16,8 @@ class ScheduleContainer extends Component {
   }
 
   render() {
+    const {navigation} = this.props;
+
     return (
       <Query query={QUERY_ALL_SESSIONS}>
         {({loading, error, data}) => {
@@ -23,12 +25,7 @@ class ScheduleContainer extends Component {
           if (error) return <Text>Error: {error}</Text>;
           if (data) {
             const formattedData = formatSessionData(data.allSessions);
-            return (
-              <Schedule
-                navigation={this.props.navigation}
-                data={formattedData}
-              />
-            );
+            return <Schedule navigation={navigation} data={formattedData} />;
           }
         }}
       </Query>
