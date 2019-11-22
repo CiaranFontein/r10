@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Session from './Session';
-import styles from './styles';
 
-class SessionContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
-      load: true,
-    };
-  }
+class SessionContainer extends Component {
+  static navigationOptions = {
+    title: 'Session',
+  };
 
   render() {
-    return <Session />;
+    const {navigation} = this.props;
+    const {params} = navigation.state;
+    return (
+      <FavsContext.Consumer>
+        {({favIds, addFavSession, removeFavSession}) => (
+          <Session
+            navigation={navigation}
+            data={params[0]}
+            faveIds={faveIds}
+            addFavSession={addFavSession}
+            removeFavSession={removeFavSession}
+          />
+        )}
+      </FavsContext.Consumer>
+    );
   }
 }
 
