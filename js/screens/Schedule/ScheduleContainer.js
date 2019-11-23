@@ -7,14 +7,6 @@ import {View, Text} from 'react-native';
 import {formatSessionData} from '../../lib/dataFormatHelper';
 
 class ScheduleContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
-      load: true,
-    };
-  }
-
   render() {
     const {navigation} = this.props;
 

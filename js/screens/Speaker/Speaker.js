@@ -3,9 +3,11 @@ import styles from './styles';
 import {View, Image, TouchableOpacity, Text, Platform} from 'react-native';
 import {colors} from '../../config/styles';
 const {white} = colors;
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Speaker = ({data, navigation}) => {
-  return (
+  console.log(data);
+  return data ? (
     <View>
       <View>
         <TouchableOpacity
@@ -20,21 +22,16 @@ const Speaker = ({data, navigation}) => {
         </TouchableOpacity>
       </View>
       <View>
-        <Text style={styles.title}>d</Text>
+        <Text style={styles.title}>{data.name}</Text>
       </View>
       <View style={styles.panel}>
-        <Text style={styles.header}>Ada Lovelace</Text>
+        <Text style={styles.header}>{data.bio}</Text>
       </View>
       <View>
-        <Text>
-          Augusta Ada King-Noel, Countess of Lovelace is an English
-          Mathematician and writer, chiefly known for her work on Charles
-          Babbage's early mechanical general-purpose computer, the Analytical
-          Engine
-        </Text>
+        <Image height="100" width="100" source={{uri: data.image}} />
       </View>
     </View>
-  );
+  ) : null;
 };
 
 export default Speaker;

@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-const About = () => {
+const About = ({Conducts}) => {
   return (
     <ScrollView style={styles.about}>
       <View style={styles.aboutImageView}>
@@ -33,14 +33,14 @@ const About = () => {
       </View>
 
       <View>
-        <Text style={styles.heading}>Code of Conduct</Text>
+        <Text style={styles.heading}>Code of Conducts</Text>
       </View>
 
       <View>
-        <Text style={styles.accordion}>Purpose</Text>
-        <Text style={styles.accordion}>Open Source Citizenship</Text>
-        <Text style={styles.accordion}>Expected Behavior</Text>
-        <Text style={styles.accordion}>Unacceptable Behaviour</Text>
+        <Conducts />
+      </View>
+      <View>
+        <Text>© RED Academy 2019</Text>
       </View>
     </ScrollView>
   );

@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {HttpLink} from 'apollo-link-http';
 
-export const QUERY_ALL_CONDUCTS = gql`
+export const QUERY_CONDUCTS = gql`
   query getAllConducts($order: ConductOrderByInput) {
     allConducts(orderBy: $order) {
       id
