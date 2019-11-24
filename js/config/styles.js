@@ -4,7 +4,7 @@ export const colors = {
   black: '#000000',
   nearBlack: '#111111',
   lightBlack: '#888',
-  mediumGrey: '#999999',
+  mediumGrey: '#999',
   lightGrey: '#e6e6e6',
   blue: '#8797D6',
   purple: '#9963ea',
@@ -17,6 +17,11 @@ export const colors = {
 };
 
 export const typography = {
+  subHeader: {
+    fontFamily: 'Montserrat-Regular',
+    fontSize: 18,
+    color: mediumGrey,
+  },
   baseSize: 16,
   fontMainLight: 'Montserrat-Light',
   ...Platform.select({

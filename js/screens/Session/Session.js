@@ -10,7 +10,6 @@ const Session = ({
   removeFavSession,
   navigation,
 }) => {
-  console.log(data);
   const time = moment(data.startTime).format('hh:mm A');
   const isFav = favIds.includes(data.id);
   return (

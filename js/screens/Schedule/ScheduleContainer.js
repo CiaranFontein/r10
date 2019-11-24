@@ -3,7 +3,7 @@ import Schedule from './Schedule';
 import {QUERY_ALL_SESSIONS} from '../../config/api';
 import {Query} from 'react-apollo';
 import Loader from '../../components/Loader';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
 import {formatSessionData} from '../../lib/dataFormatHelper';
 
 class ScheduleContainer extends Component {

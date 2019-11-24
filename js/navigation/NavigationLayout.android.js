@@ -3,7 +3,7 @@ import {Platform} from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import AboutScreen from '../screens/About';
-import FavesScreen from '../screens/Faves';
+import FavsScreen from '../screens/Favs';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -23,14 +23,14 @@ const AboutStack = createStackNavigator(
   },
 );
 
-const FavesStack = createStackNavigator(
+const FavsStack = createStackNavigator(
   {
-    Faves: FavesScreen,
+    Favs: FavsScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
-      initalRouteName: 'Faves',
+      initalRouteName: 'Favs',
     }),
   },
 );
@@ -63,7 +63,7 @@ export default createDrawerNavigator(
   {
     Schedule: ScheduleStack,
     Map: MapStack,
-    Faves: FavesStack,
+    Favs: FavsStack,
     About: AboutStack,
   },
   {
@@ -75,7 +75,7 @@ export default createDrawerNavigator(
           iconName = 'md-calendar';
         } else if (routeName === 'Map') {
           iconName = 'md-map';
-        } else if (routeName === 'Faves') {
+        } else if (routeName === 'Favs') {
           iconName = 'md-heart';
         } else if (routeName === 'About') {
           iconName = 'md-information-circle';

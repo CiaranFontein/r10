@@ -3,7 +3,7 @@ import {Platform} from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import AboutScreen from '../screens/About';
-import FavesScreen from '../screens/Faves';
+import FavsScreen from '../screens/Favs';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
@@ -24,14 +24,14 @@ const AboutStack = createStackNavigator(
   },
 );
 
-const FavesStack = createStackNavigator(
+const FavsStack = createStackNavigator(
   {
-    Faves: FavesScreen,
+    Favs: FavsScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
-      initalRouteName: 'Faves',
+      initalRouteName: 'Favs',
     }),
   },
 );
@@ -65,7 +65,7 @@ export default createBottomTabNavigator(
   {
     Schedule: ScheduleStack,
     Map: MapStack,
-    Faves: FavesStack,
+    Favs: FavsStack,
     About: AboutStack,
   },
   {
@@ -77,7 +77,7 @@ export default createBottomTabNavigator(
           iconName = 'ios-calendar';
         } else if (routeName === 'Map') {
           iconName = 'ios-map';
-        } else if (routeName === 'Faves') {
+        } else if (routeName === 'Favs') {
           iconName = 'ios-heart';
         } else if (routeName === 'About') {
           iconName = 'ios-information-circle';

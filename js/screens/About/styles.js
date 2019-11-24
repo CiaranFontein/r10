@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     color: 'grey',
   },
-  accordion: {
+  accordionHeader: {
     color: 'purple',
     fontSize: 20,
     paddingTop: 5,

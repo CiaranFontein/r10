@@ -1,49 +1,84 @@
-import React from 'react';
-import styles from './styles';
+import React, {Component} from 'react';
 import {
-  View,
-  StyleSheet,
-  FlatList,
-  Image,
+  LayoutAnimation,
   Text,
+  TouchableOpacity,
+  View,
+  Animated,
   ScrollView,
 } from 'react-native';
-
-const About = ({Conducts}) => {
-  return (
-    <ScrollView style={styles.about}>
-      <View style={styles.aboutImageView}>
-        <Image
-          style={styles.aboutImage}
-          source={require('../../assets/r10_logo.png')}></Image>
-      </View>
+import styles from './styles';
+class CodeOfConduct extends Component {
+  state = {
+    isCollapsed: true,
+    rotateAnimation: new Animated.Value(0),
+  };
+  resetRotateAnimation() {
+    this.setState({
+      rotateAnimation: new Animated.Value(0),
+    });
+  }
+  rotate() {
+    Animated.timing(this.state.rotateAnimation, {
+      duration: 500,
+      toValue: 1,
+    }).start(animation => {
+      if (animation.finished) {
+        this.resetRotateAnimation();
+      }
+    });
+  }
+  onPress() {
+    LayoutAnimation.spring();
+    this.rotate();
+    this.setState({isCollapsed: !this.state.isCollapsed});
+  }
+  render() {
+    const {conduct} = this.props;
+    const {isCollapsed, rotateAnimation} = this.state;
+    const angle = rotateAnimation.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '360deg'],
+    });
+    return (
       <View>
-        <Text style={styles.paragraph}>
-          R10 is a conference that focuses on just about any topic related to
-          dev.
-        </Text>
+        <TouchableOpacity onPress={() => this.onPress()}>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <Animated.Text
+              style={[
+                styles.accordionHeader,
+                {
+                  fontSize: 24,
+                  transform: [{rotate: angle}],
+                },
+              ]}>
+              +
+            </Animated.Text>
+            <Text style={[styles.accordionHeader, {flex: 1}]}>
+              {conduct.title}
+            </Text>
+          </View>
+        </TouchableOpacity>
+        {!isCollapsed && <Text>{conduct.description}</Text>}
       </View>
-
-      <View>
-        <Text style={styles.heading}>Date & Venue</Text>
-        <Text style={styles.paragraph}>
-          The R10 Conference will take place on Tuesday, June 27, 2020 in
-          Vancouver,BC.
-        </Text>
-      </View>
-
-      <View>
-        <Text style={styles.heading}>Code of Conducts</Text>
-      </View>
-
-      <View>
-        <Conducts />
-      </View>
-      <View>
-        <Text>© RED Academy 2019</Text>
-      </View>
+    );
+  }
+}
+const About = ({data}) => {
+  const {allConducts} = data;
+  return data ? (
+    <ScrollView style={styles.default}>
+      <Text>About</Text>
+      {allConducts.map(conduct => (
+        <CodeOfConduct conduct={conduct} key={conduct.id} />
+      ))}
     </ScrollView>
-  );
+  ) : null;
 };
 
 export default About;
