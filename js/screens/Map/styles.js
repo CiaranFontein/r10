@@ -10,25 +10,9 @@ const styles = StyleSheet.create({
     color: red,
     paddingTop: 100,
   },
-  Map: {
-    margin: 10,
-  },
-  MapImageView: {
-    alignItems: 'center',
-    borderBottomColor: 'lightgrey',
-    borderBottomWidth: 1,
-  },
-  MapImage: {
-    height: 60,
-    width: 250,
-    marginBottom: 20,
-    marginTop: 20,
-  },
-  heading: {
-    fontSize: 35,
-    paddingTop: 5,
-    paddingBottom: 5,
-    color: 'grey',
+  map: {
+    height: '100%',
+    width: '100%',
   },
 });
 
