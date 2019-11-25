@@ -1,9 +1,10 @@
 import React from 'react';
-import Text from 'react-native';
 import Map from './Map';
-import styles from './styles';
 
 class MapContainer extends React.Component {
+  static navigationOptions = {
+    title: 'Map',
+  };
   render() {
     return <Map />;
   }

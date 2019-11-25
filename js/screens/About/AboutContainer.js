@@ -6,6 +6,9 @@ import {QUERY_CONDUCTS} from '../../config/api';
 import Loader from '../../components/Loader';
 
 class AboutContainer extends Component {
+  static navigationOptions = {
+    title: 'About',
+  };
   render() {
     return (
       <Query query={QUERY_CONDUCTS}>

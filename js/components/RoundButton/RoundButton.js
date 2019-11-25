@@ -3,6 +3,7 @@ import {Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../../config/styles';
 const {purple, blue} = colors;
+import styles from './styles';
 
 const RoundButton = props => (
   <LinearGradient

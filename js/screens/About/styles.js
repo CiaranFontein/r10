@@ -1,44 +1,48 @@
 import {StyleSheet} from 'react-native';
+import {colors, typography} from '../../config/styles';
+const {red, lightGrey, black, lightPurple} = colors;
 
 const styles = StyleSheet.create({
   loading: {
     flex: 1,
     justifyContent: 'center',
-    alignContent: 'center',
-    color: 'red',
-    paddingTop: 100,
+    alignItems: 'center',
+    color: red,
+    paddingTop: typography.baseSize * 5,
+  },
+  logo: {
+    padding: typography.baseSize,
+  },
+  line: {
+    borderBottomColor: lightGrey,
+    borderWidth: 0.5,
+    width: '100%',
   },
   about: {
     margin: 10,
   },
-  aboutImageView: {
-    alignItems: 'center',
-    borderBottomColor: 'lightgrey',
-    borderBottomWidth: 1,
-  },
-  aboutImage: {
-    height: 60,
-    width: 250,
-    marginBottom: 20,
-    marginTop: 20,
-  },
-  paragraph: {
-    fontSize: 18,
-    paddingTop: 5,
-    paddingBottom: 5,
+  text: {
+    fontSize: typography.baseSize * 1.5,
+    padding: typography.baseSize,
     fontWeight: '300',
   },
   heading: {
-    fontSize: 35,
-    paddingTop: 5,
-    paddingBottom: 5,
-    color: 'grey',
+    fontSize: typography.baseSize * 2,
+    padding: typography.baseSize,
+    color: black,
+    fontWeight: '600',
   },
   accordionHeader: {
-    color: 'purple',
-    fontSize: 20,
-    paddingTop: 5,
-    paddingBottom: 5,
+    color: lightPurple,
+    fontSize: typography.baseSize * 1.5,
+    padding: typography.baseSize / 2,
+  },
+  contentContainer: {
+    padding: 16,
+    alignItems: 'center',
+  },
+  hundred: {
+    width: '100%',
   },
 });
 

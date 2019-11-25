@@ -7,6 +7,9 @@ import {Text} from 'react-native';
 import {formatSessionData} from '../../lib/dataFormatHelper';
 
 class ScheduleContainer extends Component {
+  static navigationOptions = {
+    title: 'Schedule',
+  };
   render() {
     const {navigation} = this.props;
 

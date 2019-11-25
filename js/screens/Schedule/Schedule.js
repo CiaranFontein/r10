@@ -3,6 +3,7 @@ import {Text, SectionList} from 'react-native';
 import Loader from '../../components/Loader';
 import Session from '../../components/Session';
 import moment from 'moment';
+import styles from './styles';
 
 const Schedule = ({navigation, data}) => {
   return data ? (
@@ -14,7 +15,7 @@ const Schedule = ({navigation, data}) => {
       )}
       renderSectionHeader={({section: {title}}) => {
         const time = moment(title).format('hh:mm A');
-        return <Text>{`${time}`}</Text>;
+        return <Text style={styles.time}>{`${time}`}</Text>;
       }}
     />
   ) : (
