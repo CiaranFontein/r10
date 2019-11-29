@@ -10,9 +10,7 @@ export default class App extends Component {
     return (
       <ApolloProvider client={client}>
         <FavsProvider>
-          <SafeAreaView style={{flex: 1}}>
-            <RootStackNavigator />
-          </SafeAreaView>
+          <RootStackNavigator />
         </FavsProvider>
       </ApolloProvider>
     );

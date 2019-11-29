@@ -23,17 +23,20 @@ const styles = StyleSheet.create({
     margin: typography.baseSize,
     justifyContent: 'center',
     alignItems: 'center',
+    fontFamily: typography.fontMain,
   },
   title: {
     fontSize: typography.baseSize * 2,
     color: black,
     padding: typography.baseSize,
     fontWeight: '600',
+    fontFamily: typography.fontMain,
   },
   heading: {
     fontSize: typography.baseSize * 2,
     padding: typography.baseSize / 2,
     color: mediumGrey,
+    fontFamily: typography.fontMain,
   },
   avatar: {
     height: avatarSize,
@@ -46,6 +49,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: typography.baseSize,
     paddingVertical: typography.baseSize / 2,
     lineHeight: typography.baseSize * 2.25,
+    fontFamily: typography.fontMain,
   },
   blackBackground: {
     backgroundColor: black,
@@ -54,6 +58,8 @@ const styles = StyleSheet.create({
     color: white,
     padding: typography.baseSize,
     fontSize: typography.baseSize * 1.5,
+    paddingTop: 30,
+    fontFamily: typography.fontMain,
   },
   headerContainer: {
     flexDirection: 'row',
@@ -65,6 +71,7 @@ const styles = StyleSheet.create({
   },
   closeIcon: {
     padding: typography.baseSize / 2,
+    paddingTop: 30,
   },
 });
 
