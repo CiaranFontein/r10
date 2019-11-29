@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     padding: 16,
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   hundred: {
     width: '100%',

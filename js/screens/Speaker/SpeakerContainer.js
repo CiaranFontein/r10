@@ -8,7 +8,6 @@ class SpeakerContainer extends React.Component {
   render() {
     const {navigation} = this.props;
     const data = navigation.state.params[0];
-    console.log(data);
     return <Speaker data={data} navigation={navigation} />;
   }
 }

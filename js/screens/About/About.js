@@ -13,6 +13,7 @@ import {typography} from '../../config/styles';
 const {subHeader, fontMainLight} = typography;
 import styles from './styles';
 import {requiredSubselectionMessage} from 'graphql/validation/rules/ScalarLeafs';
+import PropTypes from 'prop-types';
 
 class CodeOfConduct extends Component {
   state = {
@@ -102,6 +103,10 @@ const About = ({data}) => {
       <Text style={fontMainLight}>© RED Academy 2019</Text>
     </ScrollView>
   ) : null;
+};
+
+About.propTypes = {
+  CodeOfConducts: PropTypes.func,
 };
 
 export default About;

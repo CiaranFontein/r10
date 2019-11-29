@@ -6,6 +6,7 @@ import RoundButton from '../../components/RoundButton';
 import {colors} from '../../config/styles';
 const {red} = colors;
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 
 const Session = ({
   data,
@@ -15,7 +16,6 @@ const Session = ({
   navigation,
 }) => {
   const time = moment(data.startTime).format('hh:mm A');
-  console.log('favIds\n', favIds);
   const isFav = favIds.includes(data.id);
   return (
     <View>
@@ -62,6 +62,20 @@ const Session = ({
       </TouchableOpacity>
     </View>
   );
+};
+
+Session.propTypes = {
+  data: PropTypes.shape({
+    description: PropTypes.string,
+    id: PropTypes.string,
+    location: PropTypes.string,
+    speaker: PropTypes.object,
+    startTime: PropTypes.string,
+    title: PropTypes.string,
+  }),
+  faveIds: PropTypes.arrayOf(PropTypes.string),
+  addFaveSession: PropTypes.func,
+  removeFaveSession: PropTypes.func,
 };
 
 export default Session;
