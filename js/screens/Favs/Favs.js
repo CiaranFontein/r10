@@ -3,6 +3,7 @@ import {SectionList, Text} from 'react-native';
 import moment from 'moment';
 import Session from '../../components/Session';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const Favs = ({navigation, data}) => {
   return (
@@ -18,6 +19,11 @@ const Favs = ({navigation, data}) => {
       }}
     />
   );
+};
+
+Favs.propTypes = {
+  navigation: PropTypes.object,
+  data: PropTypes.object,
 };
 
 export default Favs;

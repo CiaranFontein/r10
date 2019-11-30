@@ -6,6 +6,7 @@ import {Text} from 'react-native';
 import {formatSessionData} from '../../lib/dataFormatHelper';
 import {FavsContext} from '../../context/FavsContext';
 import Loader from '../../components/Loader';
+import PropTypes from 'prop-types';
 
 class FavsContainer extends Component {
   static navigationOptions = {
@@ -24,6 +25,7 @@ class FavsContainer extends Component {
                 favIds.includes(session.id),
               );
               const formattedData = formatSessionData(filteredData);
+              console.log(formattedData);
               return <Favs navigation={navigation} data={formattedData} />;
             }}
           </Query>
@@ -32,5 +34,9 @@ class FavsContainer extends Component {
     );
   }
 }
+
+FavsContainer.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default FavsContainer;

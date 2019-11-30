@@ -27,11 +27,13 @@ const AboutStack = createStackNavigator(
 const FavsStack = createStackNavigator(
   {
     Favs: FavsScreen,
+    Session: SessionScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'Favs',
+      title: 'Favs',
     }),
   },
 );

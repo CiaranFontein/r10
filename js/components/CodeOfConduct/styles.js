@@ -12,9 +12,6 @@ const styles = StyleSheet.create({
   },
   logo: {
     padding: typography.baseSize,
-    display: 'flex',
-    justifyContent: 'center',
-    alignSelf: 'center',
   },
   line: {
     borderBottomColor: lightGrey,
@@ -46,13 +43,6 @@ const styles = StyleSheet.create({
   },
   hundred: {
     width: '100%',
-  },
-  footer: {
-    fontFamily: 'Montserrat',
-    fontSize: 18,
-    paddingTop: 15,
-    paddingBottom: 40,
-    fontWeight: '200',
   },
 });
 

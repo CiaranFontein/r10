@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: typography.fontMain,
+    paddingBottom: 50,
   },
   title: {
     fontSize: typography.baseSize * 2,

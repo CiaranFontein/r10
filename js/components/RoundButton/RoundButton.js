@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../../config/styles';
 const {purple, blue} = colors;
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const RoundButton = props => (
   <LinearGradient
@@ -17,5 +18,9 @@ const RoundButton = props => (
     </Text>
   </LinearGradient>
 );
+
+RoundButton.propTypes = {
+  children: PropTypes.string,
+};
 
 export default RoundButton;

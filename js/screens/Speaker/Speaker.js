@@ -7,7 +7,9 @@ import {
   Text,
   Platform,
   ScrollView,
+  Linking,
 } from 'react-native';
+import RoundButton from '../../components/RoundButton';
 import {colors, typography} from '../../config/styles';
 const {white} = colors;
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -35,6 +37,12 @@ const Speaker = ({data, navigation}) => {
         <Image style={styles.avatar} source={{uri: data.image}} />
         <Text style={styles.title}>{data.name}</Text>
         <Text style={styles.description}>{data.bio}</Text>
+        <TouchableOpacity
+          onPress={() => {
+            Linking.openURL(data.url);
+          }}>
+          <RoundButton>Read More on Wikipedia</RoundButton>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   ) : null;

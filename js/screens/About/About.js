@@ -1,81 +1,10 @@
-import React, {Component} from 'react';
-import {
-  LayoutAnimation,
-  Text,
-  TouchableOpacity,
-  View,
-  Animated,
-  ScrollView,
-  ImageBackground,
-  Image,
-} from 'react-native';
-import {typography} from '../../config/styles';
-const {subHeader, fontMainLight} = typography;
+import React from 'react';
+import {Text, View, ScrollView, Image} from 'react-native';
 import styles from './styles';
-import {requiredSubselectionMessage} from 'graphql/validation/rules/ScalarLeafs';
 import PropTypes from 'prop-types';
+import CodeOfConduct from '../../components/CodeOfConduct';
+import Loader from '../../components/Loader';
 
-class CodeOfConduct extends Component {
-  state = {
-    isCollapsed: true,
-    rotateAnimation: new Animated.Value(0),
-  };
-  resetRotateAnimation() {
-    this.setState({
-      rotateAnimation: new Animated.Value(0),
-    });
-  }
-  rotate() {
-    Animated.timing(this.state.rotateAnimation, {
-      duration: 500,
-      toValue: 1,
-    }).start(animation => {
-      if (animation.finished) {
-        this.resetRotateAnimation();
-      }
-    });
-  }
-  onPress() {
-    LayoutAnimation.spring();
-    this.rotate();
-    this.setState({isCollapsed: !this.state.isCollapsed});
-  }
-  render() {
-    const {conduct} = this.props;
-    const {isCollapsed, rotateAnimation} = this.state;
-    const angle = rotateAnimation.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['0deg', '360deg'],
-    });
-    return (
-      <View style={styles.hundred}>
-        <TouchableOpacity onPress={() => this.onPress()}>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Animated.Text
-              style={[
-                styles.accordionHeader,
-                {
-                  fontSize: 24,
-                  transform: [{rotate: angle}],
-                },
-              ]}>
-              +
-            </Animated.Text>
-            <Text style={[styles.accordionHeader, {flex: 1}]}>
-              {conduct.title}
-            </Text>
-          </View>
-        </TouchableOpacity>
-        {!isCollapsed && <Text>{conduct.description}</Text>}
-      </View>
-    );
-  }
-}
 const About = ({data}) => {
   const {allConducts} = data;
   return data ? (
@@ -100,9 +29,11 @@ const About = ({data}) => {
         <CodeOfConduct conduct={conduct} key={conduct.id} />
       ))}
 
-      <Text style={fontMainLight}>© RED Academy 2019</Text>
+      <Text style={styles.footer}>© RED Academy 2019</Text>
     </ScrollView>
-  ) : null;
+  ) : (
+    <Loader />
+  );
 };
 
 About.propTypes = {

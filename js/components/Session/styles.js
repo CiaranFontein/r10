@@ -10,10 +10,22 @@ const styles = StyleSheet.create({
   location: {
     color: mediumGrey,
   },
-  sessionContainer: {
-    borderWidth: 1,
-    padding: typography.baseSize / 2,
+  spaceBetween: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 1,
     borderColor: lightGrey,
+    borderWidth: 0.5,
+  },
+  heart: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  sessionContainer: {
+    flex: 1,
+    justifyContent: 'space-around',
+    padding: 5,
   },
 });
 
