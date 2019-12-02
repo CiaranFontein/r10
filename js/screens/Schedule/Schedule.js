@@ -12,11 +12,7 @@ const Schedule = ({navigation, data}) => {
       sections={data}
       keyExtractor={(item, index) => item + index}
       renderItem={({item}) => {
-        item.speaker ? (
-          <Session navigation={navigation} session={item} />
-        ) : (
-          <Session navigation={null} session={item} />
-        );
+        <Session navigation={navigation} session={item} />;
       }}
       renderSectionHeader={({section: {title}}) => {
         const time = moment(title).format('hh:mm A');
