@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Session from './Session';
 import {FavsContext} from '../../context/FavsContext';
+import PropTypes from 'prop-types';
 class SessionContainer extends Component {
   static navigationOptions = {
     title: 'Session',
@@ -24,5 +25,9 @@ class SessionContainer extends Component {
     );
   }
 }
+
+SessionContainer.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default SessionContainer;

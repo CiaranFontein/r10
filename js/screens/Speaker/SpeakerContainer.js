@@ -1,5 +1,6 @@
 import React from 'react';
 import Speaker from './Speaker';
+import PropTypes from 'prop-types';
 
 class SpeakerContainer extends React.Component {
   static navigationOptions = {
@@ -11,5 +12,9 @@ class SpeakerContainer extends React.Component {
     return <Speaker data={data} navigation={navigation} />;
   }
 }
+
+SpeakerContainer.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default SpeakerContainer;

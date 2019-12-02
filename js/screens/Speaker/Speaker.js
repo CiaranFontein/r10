@@ -49,7 +49,7 @@ const Speaker = ({data, navigation}) => {
 };
 
 Speaker.propTypes = {
-  info: PropTypes.shape({
+  data: PropTypes.shape({
     bio: PropTypes.string,
     id: PropTypes.string,
     image: PropTypes.string,

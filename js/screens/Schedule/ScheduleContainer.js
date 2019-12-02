@@ -5,6 +5,7 @@ import {Query} from 'react-apollo';
 import Loader from '../../components/Loader';
 import {Text} from 'react-native';
 import {formatSessionData} from '../../lib/dataFormatHelper';
+import PropTypes from 'prop-types';
 
 class ScheduleContainer extends Component {
   static navigationOptions = {
@@ -27,5 +28,9 @@ class ScheduleContainer extends Component {
     );
   }
 }
+
+ScheduleContainer.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default ScheduleContainer;

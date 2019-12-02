@@ -41,7 +41,21 @@ const Session = ({session, navigation}) => {
 };
 
 Session.propTypes = {
-  description: PropTypes.string,
+  session: PropTypes.shape({
+    description: PropTypes.string,
+    id: PropTypes.string,
+    location: PropTypes.string,
+    speaker: PropTypes.shape({
+      bio: PropTypes.string,
+      id: PropTypes.string,
+      image: PropTypes.string,
+      name: PropTypes.string,
+      url: PropTypes.string,
+    }),
+    startTime: PropTypes.string,
+    title: PropTypes.string,
+  }),
+  navigation: PropTypes.object,
 };
 
 export default Session;

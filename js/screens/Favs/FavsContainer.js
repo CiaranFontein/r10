@@ -36,7 +36,7 @@ class FavsContainer extends Component {
 }
 
 FavsContainer.propTypes = {
-  navigation: PropTypes.object,
+  formattedData: PropTypes.array,
 };
 
 export default FavsContainer;

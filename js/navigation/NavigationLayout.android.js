@@ -1,15 +1,15 @@
 import React from 'react';
-import {Platform} from 'react-native';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import AboutScreen from '../screens/About';
 import FavsScreen from '../screens/Favs';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import SessionScreen from '../screens/Session';
 import {colors, typography} from '../config/styles';
 const {mediumGrey, white, lightBlack} = colors;
 import {sharedNavigationOptions} from './config';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 
 const AboutStack = createStackNavigator(
   {
@@ -19,6 +19,7 @@ const AboutStack = createStackNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'About',
+      title: 'About',
     }),
   },
 );
@@ -26,11 +27,13 @@ const AboutStack = createStackNavigator(
 const FavsStack = createStackNavigator(
   {
     Favs: FavsScreen,
+    Session: SessionScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'Favs',
+      title: 'Favs',
     }),
   },
 );
@@ -43,6 +46,7 @@ const MapStack = createStackNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'Map',
+      title: 'Map',
     }),
   },
 );
@@ -50,14 +54,37 @@ const MapStack = createStackNavigator(
 const ScheduleStack = createStackNavigator(
   {
     Schedule: ScheduleScreen,
+    Session: SessionScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'Schedule',
+      title: 'Schedule',
     }),
   },
 );
+
+ScheduleStack.navigationOptions = {
+  drawerIcon: ({tintColor}) => (
+    <Icon name="md-calendar" size={24} color={tintColor} />
+  ),
+};
+MapStack.navigationOptions = {
+  drawerIcon: ({tintColor}) => (
+    <Icon name="md-map" size={24} color={tintColor} />
+  ),
+};
+FavsStack.navigationOptions = {
+  drawerIcon: ({tintColor}) => (
+    <Icon name="md-heart" size={24} color={tintColor} />
+  ),
+};
+AboutStack.navigationOptions = {
+  drawerIcon: ({tintColor}) => (
+    <Icon name="md-information-circle" size={24} color={tintColor} />
+  ),
+};
 
 export default createDrawerNavigator(
   {
@@ -67,22 +94,6 @@ export default createDrawerNavigator(
     About: AboutStack,
   },
   {
-    defaultNavigationOptions: ({navigation}) => ({
-      tabBarIcon: ({focused, tintColor}) => {
-        const {routeName} = navigation.state;
-        let iconName;
-        if (routeName === 'Schedule') {
-          iconName = 'md-calendar';
-        } else if (routeName === 'Map') {
-          iconName = 'md-map';
-        } else if (routeName === 'Favs') {
-          iconName = 'md-heart';
-        } else if (routeName === 'About') {
-          iconName = 'md-information-circle';
-        }
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
-      },
-    }),
     tabBarOptions: {
       activeTintColor: white,
       inactiveTintColor: mediumGrey,

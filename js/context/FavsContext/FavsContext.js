@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {addFav, removeFav, getAllFavs, getFav} from '../../config/models';
 export const FavsContext = React.createContext();
+import PropTypes from 'prop-types';
 
 class FavsProvider extends Component {
   constructor(props) {
@@ -62,8 +63,14 @@ class FavsProvider extends Component {
           getFavedSessionIds: this.getFavedSessionIds,
         }}>
         {this.props.children}
+        {console.log(this.props.children)}
       </FavsContext.Provider>
     );
   }
 }
+
+FavsProvider.Proptypes = {
+  children: PropTypes.object,
+};
+
 export default FavsProvider;

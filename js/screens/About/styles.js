@@ -50,9 +50,8 @@ const styles = StyleSheet.create({
   footer: {
     fontFamily: 'Montserrat',
     fontSize: 18,
-    paddingTop: 15,
-    paddingBottom: 40,
-    fontWeight: '200',
+    paddingTop: 16,
+    paddingBottom: 32,
   },
 });
 

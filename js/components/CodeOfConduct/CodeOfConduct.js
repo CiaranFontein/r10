@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Animated, View, Text, TouchableOpacity} from 'react-native';
+import {
+  LayoutAnimation,
+  Animated,
+  View,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import styles from './styles';
 
 class CodeOfConduct extends Component {
@@ -30,7 +36,6 @@ class CodeOfConduct extends Component {
   }
   render() {
     const {conduct} = this.props;
-    console.log(conduct);
     const {isCollapsed, rotateAnimation} = this.state;
     const angle = rotateAnimation.interpolate({
       inputRange: [0, 1],
@@ -67,7 +72,9 @@ class CodeOfConduct extends Component {
 }
 
 CodeOfConduct.propTypes = {
-  conduct: PropTypes.string,
+  conduct: PropTypes.shape({
+    title: PropTypes.string,
+  }),
 };
 
 export default CodeOfConduct;

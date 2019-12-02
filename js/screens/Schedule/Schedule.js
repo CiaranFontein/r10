@@ -4,8 +4,10 @@ import Loader from '../../components/Loader';
 import Session from '../../components/Session';
 import moment from 'moment';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const Schedule = ({navigation, data}) => {
+  console.log(data);
   return data ? (
     <SectionList
       sections={data}
@@ -21,6 +23,11 @@ const Schedule = ({navigation, data}) => {
   ) : (
     <Loader />
   );
+};
+
+Schedule.propTypes = {
+  data: PropTypes.array,
+  navigation: PropTypes.object,
 };
 
 export default Schedule;

@@ -8,9 +8,9 @@ import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {sharedNavigationOptions} from './config';
 import {colors, typography} from '../config/styles';
 const {mediumGrey, white, black, tintColor} = colors;
-import {sharedNavigationOptions} from './config';
 
 const AboutStack = createStackNavigator(
   {
@@ -20,6 +20,7 @@ const AboutStack = createStackNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'About',
+      title: 'About',
     }),
   },
 );
@@ -46,6 +47,7 @@ const MapStack = createStackNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'Map',
+      title: 'Map',
     }),
   },
 );
@@ -59,6 +61,7 @@ const ScheduleStack = createStackNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initalRouteName: 'Schedule',
+      title: 'Schedule',
     }),
   },
 );
@@ -84,7 +87,7 @@ export default createBottomTabNavigator(
         } else if (routeName === 'About') {
           iconName = 'ios-information-circle';
         }
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
+        return <Ionicons name={iconName} size={24} color={tintColor} />;
       },
     }),
     tabBarOptions: {
