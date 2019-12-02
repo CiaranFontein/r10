@@ -29,8 +29,4 @@ class ScheduleContainer extends Component {
   }
 }
 
-ScheduleContainer.propTypes = {
-  navigation: PropTypes.object,
-};
-
 export default ScheduleContainer;

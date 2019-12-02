@@ -11,9 +11,9 @@ const Schedule = ({navigation, data}) => {
     <SectionList
       sections={data}
       keyExtractor={(item, index) => item + index}
-      renderItem={({item}) => {
-        <Session navigation={navigation} session={item} />;
-      }}
+      renderItem={({item}) => (
+        <Session navigation={navigation} session={item} />
+      )}
       renderSectionHeader={({section: {title}}) => {
         const time = moment(title).format('hh:mm A');
         return <Text style={styles.time}>{`${time}`}</Text>;
@@ -22,11 +22,6 @@ const Schedule = ({navigation, data}) => {
   ) : (
     <Loader />
   );
-};
-
-Schedule.propTypes = {
-  data: PropTypes.array,
-  navigation: PropTypes.object,
 };
 
 export default Schedule;
