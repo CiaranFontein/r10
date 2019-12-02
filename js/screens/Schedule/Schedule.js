@@ -7,14 +7,17 @@ import styles from './styles';
 import PropTypes from 'prop-types';
 
 const Schedule = ({navigation, data}) => {
-  console.log(data);
   return data ? (
     <SectionList
       sections={data}
       keyExtractor={(item, index) => item + index}
-      renderItem={({item}) => (
-        <Session navigation={navigation} session={item} />
-      )}
+      renderItem={({item}) => {
+        item.speaker ? (
+          <Session navigation={navigation} session={item} />
+        ) : (
+          <Session navigation={null} session={item} />
+        );
+      }}
       renderSectionHeader={({section: {title}}) => {
         const time = moment(title).format('hh:mm A');
         return <Text style={styles.time}>{`${time}`}</Text>;

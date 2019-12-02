@@ -73,7 +73,7 @@ class CodeOfConduct extends Component {
 
 CodeOfConduct.propTypes = {
   conduct: PropTypes.shape({
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
   }),
 };
 

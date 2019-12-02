@@ -24,7 +24,7 @@ const RoundButton = props => {
 };
 
 RoundButton.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.string.isRequired,
 };
 
 export default RoundButton;
