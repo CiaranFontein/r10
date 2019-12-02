@@ -63,7 +63,6 @@ class FavsProvider extends Component {
           getFavedSessionIds: this.getFavedSessionIds,
         }}>
         {this.props.children}
-        {console.log(this.props.children)}
       </FavsContext.Provider>
     );
   }

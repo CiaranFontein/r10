@@ -6,7 +6,6 @@ import styles from './styles';
 import PropTypes from 'prop-types';
 
 const Favs = ({navigation, data}) => {
-  console.log(data);
   return (
     <SectionList
       sections={data}

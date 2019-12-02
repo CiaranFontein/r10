@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 
 const RoundButton = props => {
   const {children} = props;
-  console.log(children);
   return (
     <LinearGradient
       {...props}

@@ -25,7 +25,6 @@ class FavsContainer extends Component {
                 favIds.includes(session.id),
               );
               const formattedData = formatSessionData(filteredData);
-              console.log(formattedData);
               return <Favs navigation={navigation} data={formattedData} />;
             }}
           </Query>
