@@ -24,4 +24,9 @@ const Schedule = ({navigation, data}) => {
   );
 };
 
+Schedule.propTypes = {
+  data: PropTypes.array,
+  navigation: PropTypes.object,
+};
+
 export default Schedule;
