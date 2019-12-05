@@ -5,7 +5,7 @@ import Session from '../../components/Session';
 import RoundButton from '../../components/RoundButton';
 import styles from './styles';
 import PropTypes from 'prop-types';
-import {StackActions, NavigationActions} from 'react-navigation';
+import {NavigationActions} from 'react-navigation';
 
 const Favs = ({navigation, data}) => {
   const {navigate} = navigation;
