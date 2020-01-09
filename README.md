@@ -22,4 +22,4 @@ App for a conference to make it easy to find information about the schedule, spe
 
 ## Run Instructions
 
-- run `react-native run-ios`
+- run `react-native run-ios` from terminal
